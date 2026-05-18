@@ -1,0 +1,305 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 68px;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(ellipse, rgba(124,110,245,0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.glowAccent {
+  position: absolute;
+  top: 10%;
+  right: -100px;
+  width: 500px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(224,90,173,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.content {
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-6);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: rgba(124,110,245,0.1);
+  border: 1px solid rgba(124,110,245,0.3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-light);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.badge:hover {
+  background: rgba(124,110,245,0.15);
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 8px var(--color-primary);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.heading {
+  font-size: clamp(2.5rem, 6vw, var(--font-size-7xl));
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  max-width: 900px;
+}
+
+.gradient {
+  background: var(--gradient-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subheading {
+  font-size: clamp(var(--font-size-base), 2.5vw, var(--font-size-xl));
+  color: var(--color-text-muted);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnPrimary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--gradient-hero);
+  border: none;
+  cursor: pointer;
+  padding: var(--space-4) var(--space-8);
+  color: #fff;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  transition: opacity var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 4px 24px rgba(124,110,245,0.4);
+}
+
+.btnPrimary:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(124,110,245,0.5);
+}
+
+.btnSecondary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: none;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  padding: var(--space-4) var(--space-6);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.btnSecondary:hover {
+  border-color: var(--color-border-hover);
+  background: rgba(255,255,255,0.04);
+}
+
+.playBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--gradient-hero);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.disclaimer {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-subtle);
+}
+
+.heroCard {
+  margin-top: var(--space-8);
+  width: 100%;
+  max-width: 860px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg), 0 0 80px rgba(124,110,245,0.12);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+}
+
+.windowDots {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.windowDots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-border);
+}
+
+.windowDots span:nth-child(1) { background: #ff5f57; }
+.windowDots span:nth-child(2) { background: #febc2e; }
+.windowDots span:nth-child(3) { background: #28c840; }
+
+.cardTitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.cardBody {
+  display: flex;
+  height: 280px;
+}
+
+.mockSidebar {
+  width: 160px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--color-border);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.mockSidebarItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  cursor: default;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.mockSidebarItem:first-child {
+  background: rgba(124,110,245,0.12);
+  color: var(--color-primary-light);
+}
+
+.mockIcon {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: currentColor;
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+.mockMain {
+  flex: 1;
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.mockRow {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.mockStat {
+  flex: 1;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.mockStatValue {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: var(--space-1);
+}
+
+.mockStatLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.mockChart {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.mockBar {
+  flex: 1;
+  background: linear-gradient(to top, var(--color-primary), var(--color-accent));
+  border-radius: 3px 3px 0 0;
+  min-height: 4px;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+}
+
+.mockBar:hover { opacity: 1; }
+
+@media (max-width: 600px) {
+  .mockSidebar { display: none; }
+  .heroCard { max-width: 100%; }
+}
