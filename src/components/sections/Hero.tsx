@@ -1,4 +1,5 @@
 import { ArrowRight, Play } from 'lucide-react';
+import clsx from 'clsx';
 import styles from './Hero.module.css';
 
 export default function Hero() {
@@ -86,5 +87,3 @@ export default function Hero() {
     </section>
   );
 }
-
-import clsx from 'clsx';

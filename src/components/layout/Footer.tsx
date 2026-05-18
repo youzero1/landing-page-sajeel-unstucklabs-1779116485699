@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import styles from './Footer.module.css';
 
 const footerLinks = {
@@ -51,5 +52,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-import clsx from 'clsx';
